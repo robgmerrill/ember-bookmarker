@@ -1,6 +1,8 @@
 export default function(server) {
-  server.createList('user', 10);
-  server.createList('bookmark', 20);
+  server.createList('user', 10, {
+    bookmarks: server.createList('bookmarks', 20)
+  });
+  // server.createList('bookmark', 20);
 
   /*
     Seed your development database using your factories.
